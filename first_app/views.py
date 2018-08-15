@@ -9,7 +9,7 @@ def trees_list(request):
 	trees = Tree.objects.all()
 	return render(request, 'trees/index.html', {'trees': trees})
 
-def tree_show(request, pk):
-	tree = get_object_or_404(Tree, pk=pk)
-    return render(request, 'trees/tree_show.html', {'tree': tree})
+def tree_detail(request, pk):
+	tree = Tree.objects.get(id=pk)
+    return render(request, 'trees/tree_detail.html', {'tree': tree})
 	

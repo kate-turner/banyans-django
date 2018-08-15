@@ -9,7 +9,7 @@
 	<ul>
 	{% for tree in trees %}
 		<li>
-			<a href="{% url 'tree_show' pk=post.pk %}>{{tree.name}}</a>
+			<a href="{% url 'tree_detail' pk=tree.pk %}>{{tree.name}}</a>
 			<img src="{{tree.photo_url}}">
 		</li>
 	{% endfor %}
