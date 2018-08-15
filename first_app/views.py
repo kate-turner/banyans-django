@@ -9,7 +9,11 @@ def trees_list(request):
 	trees = Tree.objects.all()
 	return render(request, 'trees/index.html', {'trees': trees})
 
-def tree_detail(request, pk):
-	tree = Tree.objects.get(id=pk)
-    return render(request, 'trees/tree_detail.html', {'tree': tree})
+def tree_detail(request, id):
+	tree = Tree.objects.get(id)
+	return render(request, 'trees/tree_detail.html', {'tree': tree})
 	
+def tree_create(request):
+	if request.method == 'POST':
+		form = TreeForm(request.POST)
+		
